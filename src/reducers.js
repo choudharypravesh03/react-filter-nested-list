@@ -112,11 +112,11 @@ function filter(array, search) {
 
 function filterList(state = tree, action) {
 
-    console.log(action);
+    let filteredResults = filter(tree, action.text);
 
   switch (action.type) {
       case SEARCH:
-            return filter(tree, action.text)
+            return filteredResults
         default:
             return state;
   }
